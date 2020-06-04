@@ -14,6 +14,9 @@ library(stringr)
 library(curl)
 options(tibble.width = Inf)
 
+#to clear confusion, these keys won't work!
+#go here and sign up for your own: https://developer.twitter.com/
+#short term I am happy to share the current keys to classmates
 twitter_token <- create_token(
   app = "media_percepticon",
   consumer_key = "6JvIoIc4hoKlVBFlSMt7SzFAH",

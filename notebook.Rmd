@@ -3,25 +3,26 @@ title: "Sentiment Around COVID-19 Media Exposure"
 author: "Ronald W Buie"
 date: "5/31/2020"
 output:
-  ioslides_presentation: default
-  powerpoint_presentation:
-    reference_doc: template.pptx
-    fig_width: 10
-    fig_height: 7
-  slidy_presentation: default
+  html_document:
+    df_print: paged
+  html_notebook: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE)
+
 
 library(cluster) #contains daisy algorithm and some other useful cluster analysis tools https://www.rdocumentation.org/packages/cluster/versions/2.1.0/topics/daisy
 library(dplyr) #elegent data management
 library(dendextend) #draw pretty dendregrams
 library(ggplot2) #pretty charts
 library(purrr) # pretty data management
-library(ggwordcloud)
-library(knitr)
+library(ggwordcloud) #ggcompatable word cloud generation
+library(knitr) #user access to r notebook function, loaded for drawing markdown tables
+```
 
+
+```{r}
 #read provided data for use in presentation
 DF <- read.csv("./data/tweets.csv")
 
